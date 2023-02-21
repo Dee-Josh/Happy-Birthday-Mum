@@ -53,6 +53,12 @@ playSongs.forEach((btn)=>{
         console.log("Playing Song");
         stopSong.textContent = "Stop Song";
         playing = false;
+
+        console.log(this.parentNode);
+
+        setInterval(()=>{
+            this.parentNode.querySelector(".main-img").style = "";
+        }, 2000)
     })
 })
 
