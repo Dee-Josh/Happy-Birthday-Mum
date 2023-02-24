@@ -53,12 +53,6 @@ playSongs.forEach((btn)=>{
         console.log("Playing Song");
         stopSong.textContent = "Stop Song";
         playing = false;
-
-        console.log(this.parentNode);
-
-        setInterval(()=>{
-            this.parentNode.querySelector(".main-img").style = "";
-        }, 2000)
     })
 })
 
@@ -85,6 +79,7 @@ stopSong.addEventListener('click', ()=>{
 
 // Set the date we're counting down to
 var countDownDate = new Date("March 2, 2023 00:00:00").getTime();
+var countDownDate = new Date("jan 1, 2023 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -156,11 +151,13 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 1) {
     clearInterval(x);
-    alert("It's your Birthday Sir");
+    alert("It's your Birthday Mummy");
 
     happyMarquee.style.opacity = "1";
     countdownContainer.style.display = "none";
+    countdownContainer.style.opacity = 0;
     document.body.style.overflowX = "hidden";
+    confecti.style.display = "initial"
   }
 }, 1000);
 
@@ -216,9 +213,10 @@ picture.forEach((pic)=>{
     
 
         displayImage();
-
-        
-
+        let removeTransform = pic.querySelector("a .main-img");
+        setInterval(()=>{
+            removeTransform.classList.toggle("remove-transform")
+        }, 3000);
     })
 
     // SOMETHING DELETED

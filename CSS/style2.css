@@ -24,8 +24,9 @@ body{
     position: relative;
     width: 100%;
     background-color: rgb(22, 0, 22);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
+
 
 .header{
     width: 100%;
@@ -33,7 +34,7 @@ body{
     display: flex;
     align-items: center;
     padding: 30px;
-    background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.73)), url(/spec/IMG_6047.jpeg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6936), rgba(0, 0, 0, 0.69)), url(/spec/IMG_6047.jpeg);
     background-attachment: fixed;
     background-size: 100%;
     background-position: center;
@@ -145,6 +146,10 @@ body{
     filter: brightness(1);
 }
 
+.remove-transform{
+    transform: scale(1)!important;
+}
+
   
 .birthday-img p {
     color: #fff;
@@ -164,7 +169,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 
     padding: 12px;
@@ -400,6 +405,7 @@ body{
     display: none;
 }
 
+
 .happy-marquee{
     top: 4px;
     position: absolute;
@@ -407,6 +413,7 @@ body{
     font-size: 20px;
     opacity:0 ;
     pointer-events: none;
+    z-index: 1000;
 }
 
 @media screen and (max-width: 320px){
