@@ -28,6 +28,12 @@ const happyMarquee = document.querySelector(".happy-marquee")
 const confecti = document.querySelector(".overall");
 
 
+
+setTimeout(()=>{
+    alert("Click on any of the pictures to view slideshow.")
+}, 20000)
+
+
 const audio = new Audio;
 
 const birthdaySongs = [
@@ -79,7 +85,7 @@ stopSong.addEventListener('click', ()=>{
 
 // Set the date we're counting down to
 var countDownDate = new Date("March 2, 2023 00:00:00").getTime();
-var countDownDate = new Date("jan 1, 2023 00:00:00").getTime();
+// var countDownDate = new Date("jan 1, 2023 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -157,7 +163,7 @@ var x = setInterval(function() {
     countdownContainer.style.display = "none";
     countdownContainer.style.opacity = 0;
     document.body.style.overflowX = "hidden";
-    confecti.style.display = "initial"
+    // confecti.style.display = "initial";
   }
 }, 1000);
 
@@ -166,6 +172,13 @@ let pico;
 
 let display = "true";
 let displayImage;
+
+let viewed = false;
+
+let picNo;
+let picSrc;
+let slide = false;
+let imageInfo;
 
 
 picture.forEach((pic)=>{
@@ -206,17 +219,70 @@ picture.forEach((pic)=>{
             displayImage = ()=>{
                 console.log("Nothing");
                 display = "true";
-                window.screenTop = 2000;
+                window.screenTop = "2000px";
             }
         }
 
-    
+        picNo = 1;
+        imageInfo = pic.querySelector("p").textContent;
 
         displayImage();
         let removeTransform = pic.querySelector("a .main-img");
-        setInterval(()=>{
-            removeTransform.classList.toggle("remove-transform")
+       
+
+        setTimeout(() => {
+            viewed = true;
+            // console.log(viewed);
         }, 3000);
+
+        slide = !slide;
+
+        if(slide === true) {
+            picSrc = pic.querySelector(".main-img").getAttribute("src");
+            imageInfo = pic.querySelector("p").textContent;
+            console.log(picSrc);
+
+            removing = setInterval(()=>{
+                removeTransform.classList.toggle("remove-transform");
+            }, 3000);
+            setTimeout(() => {
+                adding = setInterval(()=>{
+                    removeTransform.classList.toggle("add-transform");
+                }, 3000);
+            }, 3000);
+
+            imageSlide = setInterval(() => {
+                if (picNo <= 23) {
+                    pic.querySelector(".main-img").src = `./spec/${picNo++}.jpg`
+                    // console.log(pic);
+                }
+            }, 3000);
+            pic.querySelector("p").textContent = "Happy Birthday Mummy..";
+            pic.querySelector(".fa-xmark").style.pointerEvents = "initial";
+            pic.style.pointerEvents = "none";
+        }else{
+            pic.querySelector(".main-img").setAttribute("src", picSrc); 
+            clearInterval(imageSlide);
+            pic.querySelector("p").textContent = imageInfo;
+            clearInterval(removing);
+            clearInterval(adding);
+        }
+
+
+        const audioSource = Math.trunc(Math.random()*10);
+        audio.src = birthdaySongs[audioSource];
+        audio.play();
+        console.log("Playing Song");
+        stopSong.textContent = "Stop Song";
+        playing = false;
+        audio.addEventListener("ended", ()=>{ 
+            const audioSource = Math.trunc(Math.random()*10);
+            audio.src = birthdaySongs[audioSource];
+            audio.play();
+            console.log("Playing Song");
+            stopSong.textContent = "Stop Song";
+            playing = false;
+        })
     })
 
     // SOMETHING DELETED
@@ -241,8 +307,64 @@ xmarks.forEach((mark)=>{
         homeButton.style.display = "block"; 
         countD.style.display = "flex";  
         stopSong.style.opacity = 1;
+
+        viewed = false;
+
+        setTimeout(()=>{
+            if(playing){
+                const audioSource = Math.trunc(Math.random()*10);
+                audio.src = birthdaySongs[audioSource];
+                audio.play();
+                stopSong.textContent = "Stop Song";
+                playing = false;
+            }else{
+                audio.pause();
+                audio.currentTime = 0;
+                stopSong.textContent = "Play Song";
+                playing = true;
+            }
+        }, 100);
+
+        pico.querySelector("p").textContent = imageInfo;
+        pico.style.pointerEvents = "initial";
+
+        setTimeout(() => {
+            clearInterval(removing);
+            clearInterval(adding);
+        }, 100);
+
+        pico.querySelector(".main-img").classList.remove("remove-transform", "add-transform");
+
     })
 })
+
+
+// window.onpopstate = function(){
+//     if(viewed == true){
+//         pico.style.position = "relative";
+//         // pico.style.left = "";
+//         // pico.style.top = "";
+//         pico.style.height = "";
+//         pico.style.width = "";
+//         pico.style.zIndex = "";
+//         document.body.style.overflow = "scroll";
+//         // header.style.display = "none";
+
+
+//         const xmark = pico.querySelector(".fa-xmark");
+//         xmark.style.opacity = 0;
+//         console.log("hdjdjdj");
+//         header.style.opacity = "1";
+//         homeButton.style.display = "block"; 
+//         countD.style.display = "flex";  
+//         stopSong.style.opacity = 1;
+
+//         viewed = false;
+//         console.log(viewed);
+//     }
+// }
+    
+
 
 // SOMETHING DELETED
 

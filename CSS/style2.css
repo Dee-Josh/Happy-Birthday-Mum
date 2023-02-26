@@ -147,7 +147,13 @@ body{
 }
 
 .remove-transform{
-    transform: scale(1)!important;
+    transform: scale(1);
+    filter: brightness(1) !important;
+}
+
+.add-transform{
+    transform: scale(1.1);
+    filter: brightness(1) !important;
 }
 
   
@@ -407,6 +413,7 @@ body{
 
 
 .happy-marquee{
+    pointer-events: none;
     top: 4px;
     position: absolute;
     color: white;
