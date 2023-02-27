@@ -31,7 +31,7 @@ const confecti = document.querySelector(".overall");
 
 setTimeout(()=>{
     alert("Click on any of the pictures to view slideshow.")
-}, 20000)
+}, 40000)
 
 
 const audio = new Audio;
