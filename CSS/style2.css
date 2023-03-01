@@ -147,7 +147,7 @@ body{
 }
 
 .remove-transform{
-    transform: scale(1);
+    transform: scale(1) !important;
     filter: brightness(1) !important;
 }
 

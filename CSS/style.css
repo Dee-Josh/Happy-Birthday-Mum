@@ -48,7 +48,7 @@ button.special-audio{
     width: 50%;
     min-height: 100vh;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/28.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/27.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -233,6 +233,7 @@ button.special-audio{
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
 }
   
 .btn:hover {
@@ -441,6 +442,14 @@ button.special-audio{
 }
 
 @media screen and (max-width: 645px){
+
+    .left-container{
+        background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/27.jpg);
+        background-position: center;
+        background-size: 143% 100%;
+        background-repeat: no-repeat;
+    }
+
     .right-container h1{
         margin-top: 1.2rem;
         font-size: 30px;

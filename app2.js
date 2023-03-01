@@ -242,7 +242,7 @@ picture.forEach((pic)=>{
 
         displayImage();
         let removeTransform = pic.querySelector("a .main-img");
-       
+        pic.querySelector(".birthday-img-btn").style.opacity = 0;
 
         setTimeout(() => {
             viewed = true;
@@ -279,12 +279,14 @@ picture.forEach((pic)=>{
             pic.querySelector("p").textContent = "Happy Birthday Mummy..";
             pic.querySelector(".fa-xmark").style.pointerEvents = "initial";
             pic.style.pointerEvents = "none";
+            pic.querySelector(".main-img").setAttribute("click", true)
         }else{
             pic.querySelector(".main-img").setAttribute("src", picSrc); 
             clearInterval(imageSlide);
             pic.querySelector("p").textContent = imageInfo;
             clearInterval(removing);
             clearInterval(adding);
+            pic.querySelector(".birthday-img-btn").style.opacity = 1;
         }
 
 
