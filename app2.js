@@ -188,6 +188,8 @@ let picSrc;
 let slide = false;
 let imageInfo;
 
+let width = screen.width;
+
 
 picture.forEach((pic)=>{
     pic.addEventListener("click", ()=>{
@@ -203,8 +205,8 @@ picture.forEach((pic)=>{
                 pic.style.transform = "translate(-50%, -0%)"
                 pic.style.top = "0";
                 pic.style.height = "100vh";
-                if(window.screenX > 300){
-                    pic.style.width = "100%"; 
+                if(width < 600){
+                    pic.style.width = "99%"; 
                 }else{
                     pic.style.maxWidth = "fit-content";
                     pic.style.width = "100%";
