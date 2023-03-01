@@ -187,8 +187,12 @@ let picNo;
 let picSrc;
 let slide = false;
 let imageInfo;
+let imageSlide
 
 let width = screen.width;
+
+let adding;
+let removing;
 
 
 picture.forEach((pic)=>{
@@ -205,7 +209,7 @@ picture.forEach((pic)=>{
                 pic.style.transform = "translate(-50%, -0%)"
                 pic.style.top = "0";
                 pic.style.height = "100vh";
-                if(width < 600){
+                if(width < 650){
                     pic.style.width = "99%"; 
                 }else{
                     pic.style.maxWidth = "fit-content";
@@ -243,7 +247,7 @@ picture.forEach((pic)=>{
         setTimeout(() => {
             viewed = true;
             // console.log(viewed);
-        }, 3000);
+        }, 1000);
 
         slide = !slide;
 
@@ -354,30 +358,11 @@ xmarks.forEach((mark)=>{
 })
 
 
-// window.onpopstate = function(){
-//     if(viewed == true){
-//         pico.style.position = "relative";
-//         // pico.style.left = "";
-//         // pico.style.top = "";
-//         pico.style.height = "";
-//         pico.style.width = "";
-//         pico.style.zIndex = "";
-//         document.body.style.overflow = "scroll";
-//         // header.style.display = "none";
-
-
-//         const xmark = pico.querySelector(".fa-xmark");
-//         xmark.style.opacity = 0;
-//         console.log("hdjdjdj");
-//         header.style.opacity = "1";
-//         homeButton.style.display = "block"; 
-//         countD.style.display = "flex";  
-//         stopSong.style.opacity = 1;
-
-//         viewed = false;
-//         console.log(viewed);
-//     }
-// }
+window.onhashchange = function(){
+    if (viewed === true) {
+        location.reload();
+    }
+}
     
 
 
