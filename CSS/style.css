@@ -48,7 +48,7 @@ button.special-audio{
     width: 50%;
     min-height: 100vh;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/IMG_6030.jpeg);
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/28.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -199,8 +199,8 @@ button.special-audio{
 }
 
 .after-date{
-    background: linear-gradient(rgba(206, 0, 206, 0.32), rgba(206, 0, 206, 0.39)), url(/spec/IMG_6037.jpeg);
-    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/IMG_6037.jpeg);
+    background: linear-gradient(rgba(206, 0, 206, 0.32), rgba(206, 0, 206, 0.39)), url(/spec/29.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/29.jpg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

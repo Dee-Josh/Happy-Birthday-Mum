@@ -30,7 +30,9 @@ const confecti = document.querySelector(".overall");
 
 
 setTimeout(()=>{
-    alert("Click on any of the pictures to view slideshow.")
+    if(!slide){
+        alert("Click on any of the pictures to view slideshow.")
+    }
 }, 40000)
 
 
@@ -45,9 +47,15 @@ const birthdaySongs = [
     "./sounds/6.mp3",
     "./sounds/7.mp3",
     "./sounds/8.mp3",
-    "./sounds/9.mp3",
     "./sounds/10.mp3"
 ];
+
+const slideSongs = [
+    "./sounds/1.mp3",
+    "./sounds/3.mp3",
+    "./sounds/7.mp3",
+    "./sounds/8.mp3"
+]
 
 
 
@@ -251,12 +259,17 @@ picture.forEach((pic)=>{
                 }, 3000);
             }, 3000);
 
-            imageSlide = setInterval(() => {
-                if (picNo <= 23) {
-                    pic.querySelector(".main-img").src = `./spec/${picNo++}.jpg`
-                    // console.log(pic);
-                }
-            }, 3000);
+            setTimeout(()=>{
+                imageSlide = setInterval(() => {
+                    if (picNo <= 30) {
+                        pic.querySelector(".main-img").src = `./spec/${picNo++}.jpg`
+                        // console.log(pic);
+                    }else{
+                        pic.querySelector(".main-img").src = `./spec/${23}.jpg`
+                    }
+                }, 3000);
+            }, 2200)
+
             pic.querySelector("p").textContent = "Happy Birthday Mummy..";
             pic.querySelector(".fa-xmark").style.pointerEvents = "initial";
             pic.style.pointerEvents = "none";
@@ -269,15 +282,15 @@ picture.forEach((pic)=>{
         }
 
 
-        const audioSource = Math.trunc(Math.random()*10);
-        audio.src = birthdaySongs[audioSource];
+        const audioSource = Math.trunc(Math.random()*3);
+        audio.src = slideSongs[audioSource];
         audio.play();
         console.log("Playing Song");
         stopSong.textContent = "Stop Song";
         playing = false;
         audio.addEventListener("ended", ()=>{ 
-            const audioSource = Math.trunc(Math.random()*10);
-            audio.src = birthdaySongs[audioSource];
+            const audioSource = Math.trunc(Math.random()*3);
+            audio.src = slideSongs[audioSource];
             audio.play();
             console.log("Playing Song");
             stopSong.textContent = "Stop Song";

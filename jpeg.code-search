@@ -1,0 +1,56 @@
+# Query: jpeg
+# ContextLines: 1
+
+13 results - 3 files
+
+index2.html:
+   53              </div>
+   54:             <img class="main-img" src="./spec/27.jpg" alt="">
+   55            </a>
+
+   63              </div>
+   64:             <img class="main-img" src="./spec/24.jpg" alt="">
+   65            </a>
+
+   73              </div>
+   74:             <img class="main-img" src="./spec/25.jpg" alt="">
+   75            </a>
+
+   83              </div>
+   84:             <img class="main-img" src="./spec/26.jpg" alt="">
+   85            </a>
+
+   93              </div>
+   94:             <img class="main-img" src="./spec/27.jpg" alt="">
+   95            </a>
+
+  103              </div>
+  104:             <img class="main-img" src="./spec/28.jpg" alt="">
+  105            </a>
+
+  124              </div>
+  125:             <img class="main-img" src="./spec/30.jpg" alt="">
+  126            </a>
+
+  134              </div>
+  135:             <img class="main-img" src="./spec/26.jpg" alt="">
+  136            </a>
+
+  295              </div>
+  296:             <img class="main-img" src="./spec/29.jpg" alt="">
+  297            </a>
+
+CSS\style.css:
+   50      height: 100vh;
+   51:     background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/IMG_6030.jpg);
+   52      background-position: center;
+
+  201  .after-date{
+  202:     background: linear-gradient(rgba(206, 0, 206, 0.32), rgba(206, 0, 206, 0.39)), url(/spec/28.jpg);
+  203:     background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.69)), url(/spec/28.jpg);
+  204      background-position: center;
+
+CSS\style2.css:
+  36      padding: 30px;
+  37:     background: linear-gradient(rgba(0, 0, 0, 0.6936), rgba(0, 0, 0, 0.69)), url(/spec/30.jpeg);
+  38      background-attachment: fixed;

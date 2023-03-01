@@ -36,7 +36,6 @@ const birthdaySongs = [
     "./sounds/6.mp3",
     "./sounds/7.mp3",
     "./sounds/8.mp3",
-    "./sounds/9.mp3",
     "./sounds/10.mp3"
 ];
 
@@ -71,7 +70,7 @@ btn.addEventListener('click', ()=>{
 
 // Set the date we're counting down toz
 var countDownDate = new Date("March 2, 2023 00:00:00").getTime();
-// var countDownDate = new Date("jan 1, 2023 00:00:00").getTime();
+var countDownDate = new Date("jan 1, 2023 00:00:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
