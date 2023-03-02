@@ -363,6 +363,12 @@ body{
       columns: 2;
       gap: 1em;
     }
+
+    .height-one,
+    .height-two,
+    .height-three{
+        height: fit-content;
+    }
 }
 
 @media screen and (max-width: 515px) {

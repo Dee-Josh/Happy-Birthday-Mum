@@ -37,20 +37,32 @@ setTimeout(()=>{
 
             let pic = picture[0];
 
+           
             if (display === "true"){
                 console.log("vjjvjv");
                 displayImage = ()=>{
                     pico = pic;
                         
                     console.log(pic);
-                    pic.style.position = "absolute";
-                    pic.style.left = "50%";
-                    pic.style.transform = "translate(-50%, -0%)"
-                    pic.style.top = "0";
-                    pic.style.height = "100vh";
+                    
                     if(width < 650){
+                        pic.style.position = "absolute";
+                        pic.style.left = "50%";
+                        pic.style.top = "50%";
+                        pic.style.transform = "translate(-50%, 50%)"
+                        pic.style.top = "0";
+                        pic.style.height = "50vh";
+                        header.style.height = "120vh";
+
                         pic.style.width = "99%"; 
                     }else{
+
+                        pic.style.position = "absolute";
+                        pic.style.left = "50%";
+                        pic.style.transform = "translate(-50%, -0%)"
+                        pic.style.top = "0";
+                        pic.style.height = "100vh";
+                        
                         pic.style.maxWidth = "fit-content";
                         pic.style.width = "100%";
                     }
@@ -143,7 +155,6 @@ setTimeout(()=>{
                 stopSong.textContent = "Stop Song";
                 playing = false;
             })
-
         }
     }
 
@@ -318,14 +329,25 @@ picture.forEach((pic)=>{
                 pico = pic;
                     
                 console.log(pic);
-                pic.style.position = "absolute";
-                pic.style.left = "50%";
-                pic.style.transform = "translate(-50%, -0%)"
-                pic.style.top = "0";
-                pic.style.height = "100vh";
+                
                 if(width < 650){
+                    pic.style.position = "absolute";
+                    pic.style.left = "50%";
+                    pic.style.top = "50%";
+                    pic.style.transform = "translate(-50%, 50%)"
+                    pic.style.top = "0";
+                    pic.style.height = "50vh";
+                    header.style.height = "120vh";
+
                     pic.style.width = "99%"; 
                 }else{
+
+                    pic.style.position = "absolute";
+                    pic.style.left = "50%";
+                    pic.style.transform = "translate(-50%, -0%)"
+                    pic.style.top = "0";
+                    pic.style.height = "100vh";
+                    
                     pic.style.maxWidth = "fit-content";
                     pic.style.width = "100%";
                 }
@@ -431,6 +453,8 @@ xmarks.forEach((mark)=>{
         pico.style.height = "";
         pico.style.width = "";
         pico.style.zIndex = "";
+        pico.style.transform = "translate(-50%, -0%)";
+        header.style.height = "100vh"
         document.body.style.overflow = "scroll";
         // header.style.display = "none";
 
