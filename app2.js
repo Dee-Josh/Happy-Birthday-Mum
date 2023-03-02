@@ -31,7 +31,7 @@ const confecti = document.querySelector(".overall");
 
 setTimeout(()=>{
     if(!slide){
-        if(window.confirm("Click 'Ok' to view picture slideshow.")){
+        if(window.confirm("Click 'OK' to view picture slideshow.")){
             window.location = "#";
 
 
