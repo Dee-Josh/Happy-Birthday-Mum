@@ -31,8 +31,122 @@ const confecti = document.querySelector(".overall");
 
 setTimeout(()=>{
     if(!slide){
-        alert("Click on any of the pictures to view slideshow.")
+        if(window.confirm("Click 'Ok' to view picture slideshow.")){
+            window.location = "#";
+
+
+            let pic = picture[0];
+
+            if (display === "true"){
+                console.log("vjjvjv");
+                displayImage = ()=>{
+                    pico = pic;
+                        
+                    console.log(pic);
+                    pic.style.position = "absolute";
+                    pic.style.left = "50%";
+                    pic.style.transform = "translate(-50%, -0%)"
+                    pic.style.top = "0";
+                    pic.style.height = "100vh";
+                    if(width < 650){
+                        pic.style.width = "99%"; 
+                    }else{
+                        pic.style.maxWidth = "fit-content";
+                        pic.style.width = "100%";
+                    }
+                    pic.style.maxHeight = "100vh";
+                    
+                    pic.style.zIndex = "1";
+                    document.body.style.overflow = "hidden";
+                
+                
+                    const xmark = pic.querySelector(".fa-xmark");
+                    xmark.style.opacity = 1;
+                    console.log(xmark);
+                    display = "false";
+                    header.style.opacity = "0";
+                    homeButton.style.display = "none"; 
+                    countD.style.display = "none"; 
+                }
+            }else{
+                displayImage = ()=>{
+                    console.log("Nothing");
+                    display = "true";
+                    window.screenTop = "2000px";
+                }
+            }
+
+            picNo = 1;
+            imageInfo = pic.querySelector("p").textContent;
+
+            displayImage();
+            let removeTransform = pic.querySelector("a .main-img");
+            pic.querySelector(".birthday-img-btn").style.opacity = 0;
+
+            setTimeout(() => {
+                viewed = true;
+                // console.log(viewed);
+            }, 1000);
+
+            slide = !slide;
+
+            if(slide === true) {
+                picSrc = pic.querySelector(".main-img").getAttribute("src");
+                imageInfo = pic.querySelector("p").textContent;
+                console.log(picSrc);
+
+                removing = setInterval(()=>{
+                    removeTransform.classList.toggle("remove-transform");
+                }, 3000);
+                setTimeout(() => {
+                    adding = setInterval(()=>{
+                        removeTransform.classList.toggle("add-transform");
+                    }, 3000);
+                }, 3000);
+
+                setTimeout(()=>{
+                    imageSlide = setInterval(() => {
+                        if (picNo <= 30) {
+                            pic.querySelector(".main-img").src = `./spec/${picNo++}.jpg`
+                            // console.log(pic);
+                        }else{
+                            pic.querySelector(".main-img").src = `./spec/${23}.jpg`
+                        }
+                    }, 3000);
+                }, 2200)
+
+                pic.querySelector("p").textContent = "Happy Birthday Mummy..";
+                pic.querySelector(".fa-xmark").style.pointerEvents = "initial";
+                pic.style.pointerEvents = "none";
+                pic.querySelector(".main-img").setAttribute("click", true)
+            }else{
+                pic.querySelector(".main-img").setAttribute("src", picSrc); 
+                clearInterval(imageSlide);
+                pic.querySelector("p").textContent = imageInfo;
+                clearInterval(removing);
+                clearInterval(adding);
+                pic.querySelector(".birthday-img-btn").style.opacity = 1;
+            }
+
+
+            const audioSource = Math.trunc(Math.random()*3);
+            audio.src = slideSongs[audioSource];
+            audio.play();
+            console.log("Playing Song");
+            stopSong.textContent = "Stop Song";
+            playing = false;
+            audio.addEventListener("ended", ()=>{ 
+                const audioSource = Math.trunc(Math.random()*3);
+                audio.src = slideSongs[audioSource];
+                audio.play();
+                console.log("Playing Song");
+                stopSong.textContent = "Stop Song";
+                playing = false;
+            })
+
+        }
     }
+
 }, 40000)
 
 
